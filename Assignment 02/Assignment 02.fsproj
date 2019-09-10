@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Assignment_02</RootNamespace>
+    <NoWarn>NU1608</NoWarn>
+  </PropertyGroup>
+
+    <ItemGroup>
+        <FsYacc Include="ExprPar.fsy">
+            <OtherFlags>--module ExprPar</OtherFlags>
+        </FsYacc>
+        <FsLex Include="ExprLex.fsl">
+            <OtherFlags> --unicode</OtherFlags>
+        </FsLex>
+    </ItemGroup>
+    
+  <ItemGroup>
+    <Compile Include="Absyn.fs" />
+    <Compile Include="Expr.fs" />
+    <Compile Include="ExprPar.fs" />
+    <Compile Include="ExprLex.fs" />
+    <Compile Include="Parse.fs" />
+    <Compile Include="BPRD-02-.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FsLexYacc" Version="9.0.2" />
+    <PackageReference Include="FsLexYacc.Runtime" Version="9.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="4.7.0" />
+  </ItemGroup>
+
+</Project>
